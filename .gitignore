@@ -1,0 +1,32 @@
+# Dependencies
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# ComfyUI portable (too large for git)
+ComfyUI/
+ComfyUI_windows_portable.rar
+
+# Frontend archive
+frontend.rar
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*

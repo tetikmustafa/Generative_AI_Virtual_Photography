@@ -1,0 +1,324 @@
+{
+  "60": {
+    "inputs": {
+      "filename_prefix": "product_front",
+      "images": ["115:8", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": { "title": "Save Front View" }
+  },
+  "78": {
+    "inputs": {
+      "image": "product.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": { "title": "Load Image (INPUT)" }
+  },
+  "179": {
+    "inputs": {
+      "filename_prefix": "product_side",
+      "images": ["142:139", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": { "title": "Save Side View" }
+  },
+  "180": {
+    "inputs": {
+      "filename_prefix": "product_iso",
+      "images": ["160:157", 0]
+    },
+    "class_type": "SaveImage",
+    "_meta": { "title": "Save Iso View" }
+  },
+  "115:39": {
+    "inputs": { "vae_name": "qwen_image_vae.safetensors" },
+    "class_type": "VAELoader",
+    "_meta": { "title": "Load VAE" }
+  },
+  "115:38": {
+    "inputs": {
+      "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": { "title": "Load CLIP" }
+  },
+  "115:37": {
+    "inputs": {
+      "unet_name": "qwen_image_edit_2509_fp8_e4m3fn.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": { "title": "Load Diffusion Model" }
+  },
+  "142:126": {
+    "inputs": { "vae_name": "qwen_image_vae.safetensors" },
+    "class_type": "VAELoader",
+    "_meta": { "title": "Load VAE 2" }
+  },
+  "142:127": {
+    "inputs": {
+      "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": { "title": "Load CLIP 2" }
+  },
+  "142:128": {
+    "inputs": {
+      "unet_name": "qwen_image_edit_2509_fp8_e4m3fn.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": { "title": "Load Diffusion Model 2" }
+  },
+  "160:144": {
+    "inputs": { "vae_name": "qwen_image_vae.safetensors" },
+    "class_type": "VAELoader",
+    "_meta": { "title": "Load VAE 3" }
+  },
+  "160:145": {
+    "inputs": {
+      "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": { "title": "Load CLIP 3" }
+  },
+  "160:146": {
+    "inputs": {
+      "unet_name": "qwen_image_edit_2509_fp8_e4m3fn.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": { "title": "Load Diffusion Model 3" }
+  },
+  "115:89": {
+    "inputs": {
+      "lora_name": "Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+      "strength_model": 1,
+      "model": ["115:37", 0]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": { "title": "Load LoRA" }
+  },
+  "142:141": {
+    "inputs": {
+      "lora_name": "Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+      "strength_model": 1,
+      "model": ["142:128", 0]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": { "title": "Load LoRA 2" }
+  },
+  "160:159": {
+    "inputs": {
+      "lora_name": "Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors",
+      "strength_model": 1,
+      "model": ["160:146", 0]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": { "title": "Load LoRA 3" }
+  },
+  "115:93": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "megapixels": 1,
+      "resolution_steps": 1,
+      "image": ["78", 0]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": { "title": "Scale Image" }
+  },
+  "142:137": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "megapixels": 1,
+      "resolution_steps": 1,
+      "image": ["78", 0]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": { "title": "Scale Image 2" }
+  },
+  "160:155": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "megapixels": 1,
+      "resolution_steps": 1,
+      "image": ["78", 0]
+    },
+    "class_type": "ImageScaleToTotalPixels",
+    "_meta": { "title": "Scale Image 3" }
+  },
+  "115:66": {
+    "inputs": { "shift": 3, "model": ["115:89", 0] },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": { "title": "ModelSamplingAuraFlow" }
+  },
+  "142:132": {
+    "inputs": { "shift": 3, "model": ["142:141", 0] },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": { "title": "ModelSamplingAuraFlow 2" }
+  },
+  "160:150": {
+    "inputs": { "shift": 3, "model": ["160:159", 0] },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": { "title": "ModelSamplingAuraFlow 3" }
+  },
+  "115:110": {
+    "inputs": {
+      "prompt": "human, hands, fingers, holding, person, body parts, floating hand, softbox, light stands, umbrellas, studio equipment, cameras, tripods, props, messy background, low quality, blurry, distorted, watermark, text, signature, bad lighting, harsh shadows, unrealistic textures, amateur photography, noisy, grainy, out of focus, compression artifacts, deformed object, cartoon, illustration.",
+      "clip": ["115:38", 0],
+      "vae": ["115:39", 0],
+      "image1": ["115:93", 0]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Negative Prompt (Front)" }
+  },
+  "115:111": {
+    "inputs": {
+      "prompt": "A direct, eye-level, professional commercial product photography of the item from image1. It is a precise hero shot centered in the frame. The setting is a clean, minimalist premium studio environment with a seamless light gray background. Illuminated by soft, diffused, invisible light sources providing wrap-around lighting from the front-left and front-right, with subtle rim lighting from behind for separation. Balanced exposure, natural contact shadows beneath the object, highly realistic textures and materials, sharp focus across the entire product. Premium advertising aesthetic, high-end luxury catalog style, ultra-realistic, 8k resolution.",
+      "clip": ["115:38", 0],
+      "vae": ["115:39", 0],
+      "image1": ["115:93", 0]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Positive Prompt (Front)" }
+  },
+  "115:88": {
+    "inputs": { "pixels": ["115:93", 0], "vae": ["115:39", 0] },
+    "class_type": "VAEEncode",
+    "_meta": { "title": "VAE Encode" }
+  },
+  "142:129": {
+    "inputs": {
+      "prompt": "human, hands, fingers, holding, person, body parts, floating hand, softbox, light stands, umbrellas, studio equipment, cameras, tripods, props, messy background, low quality, blurry, distorted, watermark, text, signature, bad lighting, harsh shadows, unrealistic textures, amateur photography, noisy, grainy, out of focus, compression artifacts, deformed object, cartoon, illustration.",
+      "clip": ["142:127", 0],
+      "vae": ["142:126", 0],
+      "image1": ["142:137", 0]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Negative Prompt (Side)" }
+  },
+  "142:133": {
+    "inputs": {
+      "prompt": "A sleek three-quarter side profile view of the product from image1, angled approximately 45 degrees to the right to reveal its depth, curves, and side details. Place the product in a premium, modern minimalist studio with a subtle textured stone surface. Bathed in soft, wrap-around lighting with seamless exposure from the front-right to highlight texture, complemented by smooth fill light and elegant rim lighting on the left edge. Highly detailed surfaces, sharp focus, cinematic depth of field with a softly blurred background, realistic reflections, luxury rebranding style, ultra-realistic, 8k resolution.",
+      "clip": ["142:127", 0],
+      "vae": ["142:126", 0],
+      "image1": ["142:137", 0]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Positive Prompt (Side)" }
+  },
+  "142:136": {
+    "inputs": { "pixels": ["142:137", 0], "vae": ["142:126", 0] },
+    "class_type": "VAEEncode",
+    "_meta": { "title": "VAE Encode 2" }
+  },
+  "160:147": {
+    "inputs": {
+      "prompt": "human, hands, fingers, holding, person, body parts, floating hand, softbox, light stands, umbrellas, studio equipment, cameras, tripods, props, messy background, low quality, blurry, distorted, watermark, text, signature, bad lighting, harsh shadows, unrealistic textures, amateur photography, noisy, grainy, out of focus, compression artifacts, deformed object, cartoon, illustration.",
+      "clip": ["160:145", 0],
+      "vae": ["160:144", 0],
+      "image1": ["160:155", 0]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Negative Prompt (Iso)" }
+  },
+  "160:151": {
+    "inputs": {
+      "prompt": "A dynamic 45-degree high-angle isometric view looking down at the product from image1, showcasing both its top surface and its front/side faces clearly. The product rests on a clean, reflective polished surface within a premium studio environment. Features a studio-grade lighting effect with soft falloff from multiple invisible light sources to minimize harsh shadows while defining shape. Photorealistic materials, highly detailed surfaces showing intricate textures, sharp focus, modern clean presentation, magazine quality advertising, ultra-realistic, 8k resolution.",
+      "clip": ["160:145", 0],
+      "vae": ["160:144", 0],
+      "image1": ["160:155", 0]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": { "title": "Positive Prompt (Iso)" }
+  },
+  "160:154": {
+    "inputs": { "pixels": ["160:155", 0], "vae": ["160:144", 0] },
+    "class_type": "VAEEncode",
+    "_meta": { "title": "VAE Encode 3" }
+  },
+  "115:75": {
+    "inputs": { "strength": 1, "model": ["115:66", 0] },
+    "class_type": "CFGNorm",
+    "_meta": { "title": "CFGNorm" }
+  },
+  "142:125": {
+    "inputs": { "strength": 1, "model": ["142:132", 0] },
+    "class_type": "CFGNorm",
+    "_meta": { "title": "CFGNorm 2" }
+  },
+  "160:143": {
+    "inputs": { "strength": 1, "model": ["160:150", 0] },
+    "class_type": "CFGNorm",
+    "_meta": { "title": "CFGNorm 3" }
+  },
+  "115:3": {
+    "inputs": {
+      "seed": 584189815858054,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": ["115:75", 0],
+      "positive": ["115:111", 0],
+      "negative": ["115:110", 0],
+      "latent_image": ["115:88", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": { "title": "KSampler (Front)" }
+  },
+  "142:138": {
+    "inputs": {
+      "seed": 383180825145818,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": ["142:125", 0],
+      "positive": ["142:133", 0],
+      "negative": ["142:129", 0],
+      "latent_image": ["142:136", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": { "title": "KSampler (Side)" }
+  },
+  "160:156": {
+    "inputs": {
+      "seed": 781195917738250,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": ["160:143", 0],
+      "positive": ["160:151", 0],
+      "negative": ["160:147", 0],
+      "latent_image": ["160:154", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": { "title": "KSampler (Iso)" }
+  },
+  "115:8": {
+    "inputs": { "samples": ["115:3", 0], "vae": ["115:39", 0] },
+    "class_type": "VAEDecode",
+    "_meta": { "title": "VAE Decode (Front)" }
+  },
+  "142:139": {
+    "inputs": { "samples": ["142:138", 0], "vae": ["142:126", 0] },
+    "class_type": "VAEDecode",
+    "_meta": { "title": "VAE Decode (Side)" }
+  },
+  "160:157": {
+    "inputs": { "samples": ["160:156", 0], "vae": ["160:144", 0] },
+    "class_type": "VAEDecode",
+    "_meta": { "title": "VAE Decode (Iso)" }
+  }
+}
