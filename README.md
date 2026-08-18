@@ -51,17 +51,17 @@ Proje iki evrede ilerlemiştir:
 
 ## ✨ Özellikler
 
-| Özellik | Açıklama |
-|---------|----------|
-| 🎨 **3 Farklı Açı** | Ön görünüm, yan profil ve izometrik perspektiften otomatik üretim |
+| Özellik                       | Açıklama                                                                |
+| ----------------------------- | ----------------------------------------------------------------------- |
+| 🎨 **3 Farklı Açı**           | Ön görünüm, yan profil ve izometrik perspektiften otomatik üretim       |
 | 🧠 **Görsel Kimlik Sadakati** | Ürünün rengi, şekli, dokusu ve logosu korunarak çevre yeniden yaratılır |
-| ⚡ **Lightning LoRA** | 4 adımda hızlı üretim — 20-60 saniye (sıcak başlatma) |
-| 🖥️ **Tamamen Yerel** | Bulut servisi veya ücretli API kullanılmaz |
-| 🔧 **Özelleştirilebilir** | Megapiksel, prompt ve adım sayısı gibi parametreler ayarlanabilir |
-| 📦 **Sürükle-Bırak** | Kolay ürün fotoğrafı yükleme |
-| 🔍 **Tam Ekran Önizleme** | Üretilen görsellere tıklayarak tam ekran görüntüleme ve indirme |
-| 📊 **İlerleme Takibi** | Gerçek zamanlı ilerleme çubuğu |
-| 🔌 **WebSocket İletişimi** | Frontend ile ComfyUI arasında anlık bağlantı |
+| ⚡ **Lightning LoRA**         | 4 adımda hızlı üretim — 20-60 saniye (sıcak başlatma)                   |
+| 🖥️ **Tamamen Yerel**          | Bulut servisi veya ücretli API kullanılmaz                              |
+| 🔧 **Özelleştirilebilir**     | Megapiksel, prompt ve adım sayısı gibi parametreler ayarlanabilir       |
+| 📦 **Sürükle-Bırak**          | Kolay ürün fotoğrafı yükleme                                            |
+| 🔍 **Tam Ekran Önizleme**     | Üretilen görsellere tıklayarak tam ekran görüntüleme ve indirme         |
+| 📊 **İlerleme Takibi**        | Gerçek zamanlı ilerleme çubuğu                                          |
+| 🔌 **WebSocket İletişimi**    | Frontend ile ComfyUI arasında anlık bağlantı                            |
 
 ---
 
@@ -102,31 +102,34 @@ Proje iki evrede ilerlemiştir:
 ## 🛠️ Teknolojiler
 
 ### Frontend
+
 - **React 18.3** — UI bileşen mimarisi
 - **Vite 5.4** — Geliştirme sunucusu ve bundler
 - **Vanilla CSS** — Özelleştirilmiş stil sistemi
 
 ### Backend (AI Engine)
+
 - **ComfyUI Portable** — Görsel üretim pipeline yöneticisi
 - **Qwen Image Edit 2509** — Ana diffusion modeli (görsel-dil mimarisi)
 - **Qwen 2.5 VL 7B** — CLIP text encoder
 - **Lightning LoRA** — 4 adımlı hız optimizasyonu
 
 ### İletişim
+
 - **WebSocket** — Frontend ↔ ComfyUI gerçek zamanlı bağlantı
 
 ---
 
 ## 📌 Gereksinimler
 
-| Gereksinim | Minimum |
-|------------|---------|
-| **İşletim Sistemi** | Windows 10/11 |
-| **GPU** | NVIDIA (6GB+ VRAM) |
-| **RAM** | 16GB (24GB önerilir) |
-| **Disk Alanı** | ~10GB (model dosyaları) |
-| **Node.js** | v18+ |
-| **Tarayıcı** | Chromium tabanlı (Chrome, Edge) |
+| Gereksinim          | Minimum                         |
+| ------------------- | ------------------------------- |
+| **İşletim Sistemi** | Windows 10/11                   |
+| **GPU**             | NVIDIA (6GB+ VRAM)              |
+| **RAM**             | 16GB (24GB önerilir)            |
+| **Disk Alanı**      | ~10GB (model dosyaları)         |
+| **Node.js**         | v18+                            |
+| **Tarayıcı**        | Chromium tabanlı (Chrome, Edge) |
 
 ---
 
@@ -135,13 +138,15 @@ Proje iki evrede ilerlemiştir:
 ### Adım 1: Repoyu Klonlayın
 
 ```bash
-git clone https://github.com/<kullanici-adi>/product-photo-ai.git
-cd product-photo-ai
+git clone https://github.com/tetikmustafa/Generative_AI_Virtual_Photography.git
+cd Generative_AI_Virtual_Photography
 ```
 
 ### Adım 2: ComfyUI Kurulumu
 
-`ComfyUI_windows_portable.rar` dosyasını proje dizinine çıkartın.
+`ComfyUI_windows_portable.rar` dosyasını aşağıdaki linkten indirip proje dizinine çıkartın:
+
+> 📥 [**ComfyUI Portable'ı İndir (Google Drive)**](https://drive.google.com/file/d/1qBl-tomvCgMCZbNOCOoWROAxXWl3cwdB/view?usp=sharing)
 
 ### Adım 3: AI Model Dosyalarını İndirin
 
@@ -217,7 +222,7 @@ Tarayıcınızda **[http://localhost:5173](http://localhost:5173)** adresine gid
 ### 4. Görsel Üretin
 
 1. 📸 Ürün fotoğrafını **sürükle-bırak** veya tıklayarak yükleyin
-2. ⚙️ *(İsteğe bağlı)* Ayarlar panelinden parametreleri düzenleyin
+2. ⚙️ _(İsteğe bağlı)_ Ayarlar panelinden parametreleri düzenleyin
 3. 🚀 **"Fotoğrafları Oluştur"** butonuna basın
 4. ⏳ 3 farklı açıdan üretilen görsellerin tamamlanmasını bekleyin
 5. 🖼️ Hazır görsellere tıklayarak tam ekran görüntüleyin veya indirin
@@ -267,11 +272,11 @@ product-photo-ai/
 
 ## ⚡ Performans
 
-| Durum | Süre |
-|-------|------|
-| **Soğuk Başlatma** (ilk üretim) | 1-3 dakika |
-| **Sıcak Başlatma** (modeller önbellekte) | 20-60 saniye |
-| **Çözünürlük 2MP'ye çıkarıldığında** | Belirgin artış |
+| Durum                                    | Süre           |
+| ---------------------------------------- | -------------- |
+| **Soğuk Başlatma** (ilk üretim)          | 1-3 dakika     |
+| **Sıcak Başlatma** (modeller önbellekte) | 20-60 saniye   |
+| **Çözünürlük 2MP'ye çıkarıldığında**     | Belirgin artış |
 
 > 💡 Sürenin büyük bölümü örnekleme sürecine aittir. Görsel yükleme, kodlama ve kaydetme adımları toplam sürenin küçük bir bölümünü oluşturur.
 
@@ -298,12 +303,12 @@ product-photo-ai/
 
 Bu proje, İstanbul Üniversitesi-Cerrahpaşa Bilgisayar Mühendisliği Bölümü **Yapay Zekaya Giriş** dersi kapsamında geliştirilmiştir.
 
-| İsim | Rol |
-|------|-----|
-| **Enes ÇAKMAK** | Geliştirici |
+| İsim                   | Rol         |
+| ---------------------- | ----------- |
+| **Enes ÇAKMAK**        | Geliştirici |
 | **Furkan Talha KASIM** | Geliştirici |
-| **Mustafa TETİK** | Geliştirici |
-| **Nail KOCABAY** | Geliştirici |
+| **Mustafa TETİK**      | Geliştirici |
+| **Nail KOCABAY**       | Geliştirici |
 
 **Danışman:** Prof. Dr. Kazım YILDIZ & Araştırma Görevlisi Merve PINAR
 
@@ -311,11 +316,11 @@ Bu proje, İstanbul Üniversitesi-Cerrahpaşa Bilgisayar Mühendisliği Bölüm�
 
 ## 📚 Kaynakça
 
-- Lin, J., et al. (2025). *Sell It Before You Make It: Diffusion-Based Product Image Generation for E-Commerce.* Alibaba Research.
-- Rombach, R., et al. (2022). *High-Resolution Image Synthesis with Latent Diffusion Models.* CVPR 2022.
-- Ho, J., et al. (2020). *Denoising Diffusion Probabilistic Models.* NeurIPS 2020.
-- Hu, E. J., et al. (2021). *LoRA: Low-Rank Adaptation of Large Language Models.* arXiv:2106.09685.
-- Qwen Team, Alibaba. (2025). *Qwen2.5-VL Technical Report.* arXiv.
+- Lin, J., et al. (2025). _Sell It Before You Make It: Diffusion-Based Product Image Generation for E-Commerce._ Alibaba Research.
+- Rombach, R., et al. (2022). _High-Resolution Image Synthesis with Latent Diffusion Models._ CVPR 2022.
+- Ho, J., et al. (2020). _Denoising Diffusion Probabilistic Models._ NeurIPS 2020.
+- Hu, E. J., et al. (2021). _LoRA: Low-Rank Adaptation of Large Language Models._ arXiv:2106.09685.
+- Qwen Team, Alibaba. (2025). _Qwen2.5-VL Technical Report._ arXiv.
 - [ComfyUI GitHub Repository](https://github.com/comfyanonymous/ComfyUI)
 
 ---
